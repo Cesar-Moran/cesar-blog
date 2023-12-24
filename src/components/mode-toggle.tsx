@@ -1,6 +1,4 @@
 import { Moon, Sun } from "lucide-react";
-
-import { Label } from "./ui/label";
 import { useTheme } from "./theme-provider";
 import ReactSwitch from "react-switch";
 import { useState } from "react";

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Separator } from "../components/ui/separator";
 import { ArrowBigDown } from "lucide-react";
 import { useRef } from "react";

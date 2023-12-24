@@ -1,6 +1,4 @@
 import { Badge } from "../components/ui/badge";
-import { AvatarImage, Avatar } from "../components/ui/avatar";
-import { Button } from "../components/ui/button";
 import { CardContent, Card } from "../components/ui/card";
 
 export default function BlogCard() {

@@ -1,6 +1,5 @@
 import {
   Contact,
-  Github,
   Home,
   Library,
   Linkedin,
