@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .nav-item {
+      @apply hover:text-blue-400
+    }
+
+    body {
+        @apply bg-white dark:bg-[#0E1015] dark:text-white min-h-screen py-24 lg:py-0
+    }
+    
+    /* ... */
+  }
+
+
