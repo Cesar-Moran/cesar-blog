@@ -2,20 +2,26 @@ import { Separator } from "../components/ui/separator";
 import { ArrowBigDown } from "lucide-react";
 import { useRef } from "react";
 import BlogCard from "../components/BlogCard";
+import AboutMe from "./AboutMe";
 
 export default function Homepage() {
   const scrollToAboutSection = useRef<HTMLDivElement>(null);
 
   const executeScroll = () => {
     if (scrollToAboutSection.current) {
-      scrollToAboutSection.current.scrollIntoView();
+      scrollToAboutSection.current.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
 
   return (
     <main>
-      <section className=" flex flex-col lg:mt-48 items-center   container pb-28">
-        <div className="flex flex-col-reverse lg:flex-row items-center w-full justify-around ">
+      <h1 className=" uppercase absolute  cursor-default  -left-12 top-44 md:top-40 lg:top-80   -rotate-90 text-6xl  border-b-2   ">
+        Start
+      </h1>
+      <section className=" flex flex-col lg:mt-48 items-center relative    container pb-28">
+        <div className="flex flex-col-reverse lg:flex-row items-center w-full justify-around flex-wrap ">
           <div className="space-y-4">
             <h1 className="text-7xl font-bold font-serif">
               Cesar <span className="text-green-600">A.</span> Morán
@@ -51,44 +57,18 @@ export default function Homepage() {
             />
           </div>
         </div>
-
         <ArrowBigDown
           onClick={executeScroll}
           className="mt-28 animate-bounce cursor-pointer"
         />
       </section>
       <Separator ref={scrollToAboutSection} className="mt-0 mb-48" />
-      <section className="container flex justify-center items-center w-full ">
-        <div className=" p-8 space-y-4 backdrop-blur   rounded-lg   border border-gray-400 dark:border-gray-50 bg-white/5  shadow-lg">
-          <h1 className="uppercase text-2xl font-semibold text-blue-500 font-serif">
-            About me
-          </h1>
-          <p className="max-w-xl text-md tracking-normal">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
-            reprehenderit sequi, sunt deserunt fuga dignissimos asperiores
-            ratione. Omnis voluptas nisi iure! Ut ex ipsa nesciunt quidem odio
-            assumenda ab necessitatibus?
-          </p>
-          <p className="max-w-xl text-md tracking-normal">
-            {" "}
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-            optio ratione porro dolores consequuntur nisi, voluptates pariatur
-            amet dolorem voluptatum reprehenderit officia accusamus, alias fuga
-            possimus corrupti. Tenetur, ratione numquam.
-          </p>
-
-          <p className="max-w-xl text-md tracking-normal">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-            optio ratione porro dolores consequuntur nisi, voluptates pariatur
-            amet dolorem voluptatum reprehenderit officia accusamus, alias fuga
-            possimus corrupti. Tenetur, ratione numquam.
-          </p>
-        </div>
-      </section>
-
+      <AboutMe />
       <Separator className="mt-48 " />
       <section className="min-h-screen container flex flex-col gap-8 justify-center items-center py-24">
-        <h1 className="text-5xl font-bold font-serif self-start ">Blogs</h1>
+        <h1 className="text-6xl font-medium font-serif self-start ">
+          Some of my work
+        </h1>
         <BlogCard />
         <BlogCard />
         <BlogCard />
