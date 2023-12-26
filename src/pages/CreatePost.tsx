@@ -19,7 +19,7 @@ export default function CreatePost() {
           value={mdStr}
           height="400px"
           className="my-8"
-          onChange={(value, viewUpdate) => setMarkdown(value)}
+          onChange={(value) => setMarkdown(value)}
         />
       </form>
     </section>
