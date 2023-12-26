@@ -13,7 +13,7 @@ export default function BlogCard() {
         <div className="flex flex-col p-7 space-y-4">
           <div className="flex gap-4">
             {" "}
-            <Badge className="backdrop-blur bg-blue-500/90 dark:!bg-green-500/50 !text-white">
+            <Badge className="backdrop-blur  bg-blue-500/90 dark:!bg-green-500/50 !text-white">
               React
             </Badge>
             <Badge className="backdrop-blur bg-blue-500/90 dark:!bg-green-500/50 !text-white">

@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar.tsx";
 import { ThemeProvider } from "./components/theme-provider.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import AboutMe from "./pages/AboutMe.tsx";
+import CreatePost from "./pages/CreatePost.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/createpost" element={<CreatePost />} />
         </Routes>
       </Router>
     </ThemeProvider>

@@ -17,9 +17,10 @@ export default function Homepage() {
 
   return (
     <main>
-      <h1 className=" uppercase absolute  cursor-default  -left-12 top-44 md:top-40 lg:top-80   -rotate-90 text-6xl  border-b-2   ">
+      <h1 className="uppercase absolute cursor-default -left-12 top-44 md:top-40 lg:top-80 -rotate-90 text-6xl border-b-2 bg-gradient-to-r from-green-500 to-blue-400 bg-clip-text text-transparent">
         Start
       </h1>
+
       <section className=" flex flex-col lg:mt-48 items-center relative    container pb-28">
         <div className="flex flex-col-reverse lg:flex-row items-center w-full justify-around flex-wrap ">
           <div className="space-y-4">
@@ -59,7 +60,7 @@ export default function Homepage() {
         </div>
         <ArrowBigDown
           onClick={executeScroll}
-          className="mt-28 animate-bounce cursor-pointer"
+          className="mt-28 animate-bounce cursor-pointer  "
         />
       </section>
       <Separator ref={scrollToAboutSection} className="mt-0 mb-48" />

@@ -17,7 +17,7 @@ import {
 
 export default function Navbar() {
   return (
-    <nav className="fixed w-full top-0 lg:border-b lg:border-gray-700 backdrop-blur z-50 ">
+    <nav className="fixed w-full top-0 lg:border-b lg:border-gray-700 backdrop-blur z-50">
       <div className="md:hidden p-4">
         <Drawer>
           <div className="w-full border  dark:border-gray-700 p-2 rounded flex justify-between">
@@ -58,15 +58,20 @@ export default function Navbar() {
         </Drawer>
       </div>
       <ul className=" text-sm w-full gap-4 dark:#0E1015 dark:text-slate-400 py-4 px-40 hidden md:flex max-w-[85rem] mx-auto">
-        <p className="text-4xl font-extrabold text-green-500 ">CiMoran</p>
+        <p className="text-4xl font-extrabold text-green-500">CiMoran</p>
         <div className="flex items-center w-full gap-4 justify-end">
-          <li className="nav-item">Homepage</li>
+          <Link to={"/"}>
+            <li className="nav-item">Homepage</li>
+          </Link>
 
           <li className="nav-item">About me</li>
 
           <li className="nav-item">Contact</li>
 
           <li className="nav-item">Blog</li>
+          <Link to={"/createpost"}>
+            <li className="nav-item">Crear post</li>
+          </Link>
 
           <li className="hover:text-blue-400 cursor-pointer">
             <Linkedin />
