@@ -9,6 +9,9 @@ import { ThemeProvider } from "./components/theme-provider.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import AboutMe from "./pages/AboutMe.tsx";
 import CreatePost from "./pages/CreatePost.tsx";
+import Login from "./pages/Login.tsx";
+import { PrivateRoute } from "./pages/PrivateRoute.tsx";
+import { SinglePostPage } from "./components/SinglePostPage.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -19,7 +22,16 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about-me" element={<AboutMe />} />
-          <Route path="/createpost" element={<CreatePost />} />
+          <Route
+            path="/createpost"
+            element={
+              <PrivateRoute>
+                <CreatePost />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/login/avemariamiamor" element={<Login />} />
+          <Route path="/post/:id" element={<SinglePostPage />} />
         </Routes>
       </Router>
     </ThemeProvider>

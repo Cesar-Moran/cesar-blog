@@ -72,6 +72,9 @@ export default function Navbar() {
           <Link to={"/createpost"}>
             <li className="nav-item">Crear post</li>
           </Link>
+          <Link to={"/login/avemariamiamor"}>
+            <li className="nav-item">Login</li>
+          </Link>
 
           <li className="hover:text-blue-400 cursor-pointer">
             <Linkedin />

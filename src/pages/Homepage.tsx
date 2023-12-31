@@ -1,11 +1,22 @@
 import { Separator } from "../components/ui/separator";
 import { ArrowBigDown } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import BlogCard from "../components/BlogCard";
 import AboutMe from "./AboutMe";
+import { Link } from "react-router-dom";
+
+type Post = {
+  id: string;
+  title: string;
+  short_description: string;
+  tags: string[];
+  imageUrl: string;
+};
 
 export default function Homepage() {
   const scrollToAboutSection = useRef<HTMLDivElement>(null);
+
+  const [posts, setPosts] = useState<Post[]>([]);
 
   const executeScroll = () => {
     if (scrollToAboutSection.current) {
@@ -14,6 +25,22 @@ export default function Homepage() {
       });
     }
   };
+
+  const displayAllPosts = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/getPosts");
+
+      const data = await response.json();
+
+      setPosts(data);
+    } catch (error) {
+      return console.log("There was an error" + error);
+    }
+  };
+
+  useEffect(() => {
+    displayAllPosts();
+  }, []);
 
   return (
     <main>
@@ -70,13 +97,17 @@ export default function Homepage() {
         <h1 className="text-6xl font-medium font-serif self-start ">
           Some of my work
         </h1>
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        {posts.map((post) => (
+          <Link to={`/post/${post.id}`}>
+            <BlogCard
+              key={post.id}
+              title={post.title}
+              tags={post.tags}
+              short_description={post.short_description}
+              imageUrl={post.imageUrl}
+            />
+          </Link>
+        ))}
       </section>
     </main>
   );

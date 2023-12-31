@@ -10,9 +10,18 @@
     body {
         @apply bg-white dark:bg-[#0E1015] dark:text-white min-h-screen py-24 lg:py-0 transition-all duration-200 
     }
-    
+  
+    .single-post h1 {
+      @apply text-5xl
+    }
+
+    .single-post img {
+      @apply w-52 h-52
+    }
+
   
   }
+
 
 
 
